@@ -1,4 +1,4 @@
-package com.github.hexosse.random.items.command;
+package com.github.hexocraft.random.items.command;
 
 /*
  * Copyright 2015 hexosse
@@ -37,13 +37,13 @@ import com.github.hexocraftapi.message.predifined.MessageColor;
 import com.github.hexocraftapi.message.predifined.line.Title;
 import com.github.hexocraftapi.message.predifined.message.*;
 import com.github.hexocraftapi.util.PlayerUtil;
-import com.github.hexosse.random.items.RandomItemsApi;
-import com.github.hexosse.random.items.RandomItemsPlugin;
-import com.github.hexosse.random.items.command.ArgType.ArgTypeRandomPool;
-import com.github.hexosse.random.items.configuration.Messages;
-import com.github.hexosse.random.items.configuration.Permissions;
-import com.github.hexosse.random.items.radomitem.RandomItem;
-import com.github.hexosse.random.items.radomitem.RandomPool;
+import com.github.hexocraft.random.items.RandomItemsApi;
+import com.github.hexocraft.random.items.RandomItemsPlugin;
+import com.github.hexocraft.random.items.command.ArgType.ArgTypeRandomPool;
+import com.github.hexocraft.random.items.configuration.Messages;
+import com.github.hexocraft.random.items.configuration.Permissions;
+import com.github.hexocraft.random.items.radomitem.RandomItem;
+import com.github.hexocraft.random.items.radomitem.RandomPool;
 import com.google.common.collect.Lists;
 import com.meowj.langutils.lang.LanguageHelper;
 import org.apache.commons.lang.StringUtils;
@@ -56,8 +56,8 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.Map;
 
-import static com.github.hexosse.random.items.RandomItemsPlugin.config;
-import static com.github.hexosse.random.items.RandomItemsPlugin.langUtils;
+import static com.github.hexocraft.random.items.RandomItemsPlugin.config;
+import static com.github.hexocraft.random.items.RandomItemsPlugin.langUtils;
 
 /**
  * @author <b>hexosse</b> (<a href="https://github.comp/hexosse">hexosse on GitHub</a>))

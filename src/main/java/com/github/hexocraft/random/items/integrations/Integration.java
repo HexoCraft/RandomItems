@@ -1,4 +1,4 @@
-package com.github.hexosse.random.items.integrations;
+package com.github.hexocraft.random.items.integrations;
 
 /*
  * Copyright 2015 hexosse

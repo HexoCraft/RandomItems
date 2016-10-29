@@ -1,4 +1,4 @@
-package com.github.hexosse.random.items.radomitem;
+package com.github.hexocraft.random.items.radomitem;
 
 /*
  * Copyright 2015 hexosse

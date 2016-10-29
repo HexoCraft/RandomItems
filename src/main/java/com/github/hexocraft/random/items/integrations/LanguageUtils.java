@@ -1,4 +1,4 @@
-package com.github.hexosse.random.items.integrations;
+package com.github.hexocraft.random.items.integrations;
 
 /*
  * Copyright 2015 hexosse
@@ -16,7 +16,7 @@ package com.github.hexosse.random.items.integrations;
  *    limitations under the License.
  */
 
-import com.github.hexosse.random.items.RandomItemsPlugin;
+import com.github.hexocraft.random.items.RandomItemsPlugin;
 import com.meowj.langutils.LangUtils;
 
 /**

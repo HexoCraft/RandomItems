@@ -1,4 +1,4 @@
-package com.github.hexosse.random.items.configuration;
+package com.github.hexocraft.random.items.configuration;
 
 /*
  * Copyright 2015 hexosse
@@ -21,7 +21,7 @@ import com.github.hexocraftapi.configuration.annotation.ConfigFooter;
 import com.github.hexocraftapi.configuration.annotation.ConfigHeader;
 import com.github.hexocraftapi.configuration.annotation.ConfigValue;
 import com.github.hexocraftapi.configuration.collection.ConfigurationMap;
-import com.github.hexosse.random.items.radomitem.RandomPool;
+import com.github.hexocraft.random.items.radomitem.RandomPool;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Collection;
@@ -88,7 +88,7 @@ public class Items extends Configuration
 	/**
 	 * Appends the specified sound effect to the end of this list
 	 *
-	 * @param soundEffect sound effect to be appended to this list
+	 * @param pool
 	 * @return <tt>true</tt> (as specified by {@link Collection#add})
 	 */
 	public RandomPool add(RandomPool pool)
@@ -99,7 +99,7 @@ public class Items extends Configuration
 	/**
 	 * Removes the first occurrence of the specified sound effect from this list
 	 *
-	 * @param soundEffectName sound effect to be remove from this list, if present
+	 * @param name
 	 * @return <tt>true</tt> if this list contained the specified element
 	 */
 	public RandomPool remove(String name)
@@ -110,7 +110,7 @@ public class Items extends Configuration
 	/**
 	 * Removes the first occurrence of the specified sound effect from this list
 	 *
-	 * @param soundEffect sound effect to be remove from this list, if present
+	 * @param pool
 	 * @return <tt>true</tt> if this list contained the specified element
 	 */
 	public RandomPool remove(RandomPool pool)
@@ -130,7 +130,7 @@ public class Items extends Configuration
 	/**
 	 * Returns the sound effect at the specified position in this list.
 	 *
-	 * @param soundEffectName Name of the element to return
+	 * @param name
 	 * @return the element at the specified position in this list
 	 */
 	public RandomPool get(String name)

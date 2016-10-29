@@ -1,4 +1,4 @@
-package com.github.hexosse.random.items.configuration;
+package com.github.hexocraft.random.items.configuration;
 
 /*
  * Copyright 2015 hexosse

@@ -1,4 +1,4 @@
-package com.github.hexosse.random.items.command.ArgType;
+package com.github.hexocraft.random.items.command.ArgType;
 
 /*
  * Copyright 2015 hexosse
@@ -18,9 +18,9 @@ package com.github.hexosse.random.items.command.ArgType;
 
 import com.github.hexocraftapi.command.CommandInfo;
 import com.github.hexocraftapi.command.type.ArgType;
-import com.github.hexosse.random.items.RandomItemsApi;
-import com.github.hexosse.random.items.RandomItemsPlugin;
-import com.github.hexosse.random.items.radomitem.RandomPool;
+import com.github.hexocraft.random.items.RandomItemsApi;
+import com.github.hexocraft.random.items.RandomItemsPlugin;
+import com.github.hexocraft.random.items.radomitem.RandomPool;
 import com.google.common.collect.ImmutableList;
 import org.bukkit.util.StringUtil;
 

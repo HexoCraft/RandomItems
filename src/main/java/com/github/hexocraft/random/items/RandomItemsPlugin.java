@@ -1,4 +1,4 @@
-package com.github.hexosse.random.items;
+package com.github.hexocraft.random.items;
 
 /*
  * Copyright 2015 hexosse
@@ -21,11 +21,11 @@ import com.github.hexocraftapi.message.predifined.message.PluginMessage;
 import com.github.hexocraftapi.message.predifined.message.PluginTitleMessage;
 import com.github.hexocraftapi.plugin.Plugin;
 import com.github.hexocraftapi.updater.GitHubUpdater;
-import com.github.hexosse.random.items.command.RiCommands;
-import com.github.hexosse.random.items.configuration.Config;
-import com.github.hexosse.random.items.configuration.Items;
-import com.github.hexosse.random.items.configuration.Messages;
-import com.github.hexosse.random.items.integrations.LanguageUtils;
+import com.github.hexocraft.random.items.command.RiCommands;
+import com.github.hexocraft.random.items.configuration.Config;
+import com.github.hexocraft.random.items.configuration.Items;
+import com.github.hexocraft.random.items.configuration.Messages;
+import com.github.hexocraft.random.items.integrations.LanguageUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;

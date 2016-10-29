@@ -1,4 +1,4 @@
-package com.github.hexosse.random.items;
+package com.github.hexocraft.random.items;
 
 /*
  * Copyright 2015 hexosse
@@ -17,8 +17,8 @@ package com.github.hexosse.random.items;
  */
 
 import com.github.hexocraftapi.util.PlayerUtil;
-import com.github.hexosse.random.items.radomitem.RandomItem;
-import com.github.hexosse.random.items.radomitem.RandomPool;
+import com.github.hexocraft.random.items.radomitem.RandomItem;
+import com.github.hexocraft.random.items.radomitem.RandomPool;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -27,9 +27,6 @@ import org.bukkit.inventory.ItemStack;
 
 import java.util.List;
 import java.util.Map;
-
-import static com.github.hexosse.random.items.RandomItemsPlugin.instance;
-import static com.github.hexosse.random.items.RandomItemsPlugin.items;
 
 /**
  * @author <b>hexosse</b> (<a href="https://github.comp/hexosse">hexosse on GitHub</a>))
@@ -41,12 +38,12 @@ public class RandomItemsApi
 
 	public static int Count()
 	{
-		return items.size();
+		return RandomItemsPlugin.items.size();
 	}
 
 	public static RandomPool get(String pool)
 	{
-		return items.get(pool);
+		return RandomItemsPlugin.items.get(pool);
 	}
 
 	public static RandomItem get(String pool, int index)
@@ -61,14 +58,14 @@ public class RandomItemsApi
 		RandomPool randomPool = get(pool);
 		if(randomPool != null) return randomPool;
 
-		randomPool = new RandomPool(instance, pool);
-		return items.add(randomPool);
+		randomPool = new RandomPool(RandomItemsPlugin.instance, pool);
+		return RandomItemsPlugin.items.add(randomPool);
 	}
 
 	public static RandomPool add(String pool, List<RandomItem> items)
 	{
 		RandomPool randomPool = get(pool);
-		randomPool = randomPool != null ? randomPool : new RandomPool(instance, pool);
+		randomPool = randomPool != null ? randomPool : new RandomPool(RandomItemsPlugin.instance, pool);
 
 		for(RandomItem item : items)
 			randomPool.add(item);
@@ -79,29 +76,29 @@ public class RandomItemsApi
 	public static RandomPool add(String pool, RandomItem item)
 	{
 		RandomPool randomPool = get(pool);
-		randomPool = randomPool != null ? randomPool : new RandomPool(instance, pool);
+		randomPool = randomPool != null ? randomPool : new RandomPool(RandomItemsPlugin.instance, pool);
 
 		return randomPool.add(item) ? randomPool : null;
 	}
 
 	public static RandomPool add(String pool, String name, ItemStack itemStack, int weight)
 	{
-		return add(pool, new RandomItem(instance, name, itemStack, weight));
+		return add(pool, new RandomItem(RandomItemsPlugin.instance, name, itemStack, weight));
 	}
 
 	public static RandomPool add(String pool, ItemStack itemStack, int weight)
 	{
-		return add(pool, new RandomItem(instance, null, itemStack, weight));
+		return add(pool, new RandomItem(RandomItemsPlugin.instance, null, itemStack, weight));
 	}
 
 	public static RandomPool add(String pool, String name, String command, int weight)
 	{
-		return add(pool, new RandomItem(instance, name, command, weight));
+		return add(pool, new RandomItem(RandomItemsPlugin.instance, name, command, weight));
 	}
 
 	public static RandomPool add(String pool, String command, int weight)
 	{
-		return add(pool, new RandomItem(instance, null, command, weight));
+		return add(pool, new RandomItem(RandomItemsPlugin.instance, null, command, weight));
 	}
 
 	public static boolean remove(String pool)
@@ -109,7 +106,7 @@ public class RandomItemsApi
 		RandomPool randomPool = get(pool);
 		if(randomPool == null) return true;
 
-		return items.remove(randomPool) != null;
+		return RandomItemsPlugin.items.remove(randomPool) != null;
 	}
 
 	public static boolean remove(String pool, RandomItem randomItem)
@@ -117,12 +114,12 @@ public class RandomItemsApi
 		RandomPool randomPool = get(pool);
 		if(randomPool == null) return true;
 
-		return items.remove(randomPool) != null;
+		return RandomItemsPlugin.items.remove(randomPool) != null;
 	}
 
 	public static Map<String, RandomPool> getList()
 	{
-		return items.getMap();
+		return RandomItemsPlugin.items.getMap();
 	}
 
 	public static List<RandomItem> getList(String pool)
@@ -134,7 +131,7 @@ public class RandomItemsApi
 
 	public static boolean save()
 	{
-		return items.save();
+		return RandomItemsPlugin.items.save();
 	}
 
 	public static boolean contains(String pool)

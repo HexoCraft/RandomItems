@@ -1,7 +1,7 @@
 name: RandomItems
 version: ${project.version}
 description: ${project.description}
-main: com.github.hexosse.random.items.RandomItemsPlugin
+main: com.github.hexocraft.random.items.RandomItemsPlugin
 
 author: hexosse
 website: www.github.hexosse
