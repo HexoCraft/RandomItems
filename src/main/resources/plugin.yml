@@ -1,0 +1,21 @@
+name: RandomItems
+version: ${project.version}
+description: ${project.description}
+main: com.github.hexosse.random.items.RandomItemsPlugin
+
+author: hexosse
+website: www.github.hexosse
+
+depend: []
+softdepend: [LanguageUtils]
+
+permissions:
+  random.items.admin: {description: All permissions, default: false}
+  random.items.create: {description: Create random list, default: false}
+  random.items.*:
+    default: op
+    children:
+        random.items.admin: true
+  random.items.admin:
+    children:
+        random.items.create: true
