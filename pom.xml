@@ -23,7 +23,7 @@
     <groupId>com.github.hexocraft</groupId>
     <artifactId>random-items</artifactId>
     <name>RandomItems</name>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
     <description>.</description>
     <url>https://github.com/HexoCraft/${project.name}</url>
@@ -248,11 +248,11 @@
                             <relocations>
                                 <relocation>
                                     <pattern>net.objecthunter.exp4j</pattern>
-                                    <shadedPattern>${project.groupId}.${project.artifactId}.api.exp4j</shadedPattern>
+                                    <shadedPattern>${project.groupId}.random.items.api.exp4j</shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <pattern>com.github.hexocraftapi</pattern>
-                                    <shadedPattern>${project.groupId}.${project.artifactId}.api</shadedPattern>
+                                    <shadedPattern>${project.groupId}.random.items.api</shadedPattern>
                                 </relocation>
                             </relocations>
                             <minimizeJar>false</minimizeJar>
