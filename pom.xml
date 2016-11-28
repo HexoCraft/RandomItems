@@ -23,7 +23,7 @@
     <groupId>com.github.hexocraft</groupId>
     <artifactId>random-items</artifactId>
     <name>RandomItems</name>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <packaging>jar</packaging>
     <description>.</description>
     <url>https://github.com/HexoCraft/${project.name}</url>
@@ -55,7 +55,7 @@
     <!-- Propriétés du projet -->
     <properties>
         <jdk.version>1.7</jdk.version>
-        <bukkit.version>1.10.2-R0.1-SNAPSHOT</bukkit.version>
+        <bukkit.version>1.11-R0.1-SNAPSHOT</bukkit.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <github.global.server>github</github.global.server>
     </properties>
