@@ -467,7 +467,7 @@ public class RiCommands extends Command<RandomItemsPlugin>
 
 						MessageBuilder hoverText = new MessageBuilder("");
 						hoverText.append(plugin.messages.mListClick).color(MessageColor.SUBCOMMAND.color());
-						ClickEvent clickEvent = new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/ri  " + entry.getValue().getName());
+						ClickEvent clickEvent = new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/ri " + cmd.l.toString() + " " + entry.getValue().getName());
 						HoverEvent hoverEvent = new HoverEvent(HoverEvent.Action.SHOW_TEXT, hoverText.create());
 						poolName.color(MessageColor.COMMAND.color()).event(clickEvent).event(hoverEvent);
 
