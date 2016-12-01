@@ -9,7 +9,7 @@ To determine the right item depending on its weight, I've ported [WeightedSelect
 * /RandomItems create \<name> : Create a new random items list
 * /RandomItems delete \<name> [delay] : Delete a random items list
 * /RandomItems add \<name> \<weight> [Description] : Add item in **hand** to the list
-* /RandomItems addc \<name> \<command> \<weight> [Description] [delay] : Add command to the list
+* /RandomItems addc \<name> \<command> \<weight> [Description] [delay] : Add command to the list (You can use {PLAYER} as placeholder in the command)
 * /RandomItems give \<name> [player] : Give an item from the random list
 * /RandomItems giveall \<name> : Give an item to all players
 * /RandomItems spawn \<name> \<world> [x] [y] [z] : Spawn an item to location
