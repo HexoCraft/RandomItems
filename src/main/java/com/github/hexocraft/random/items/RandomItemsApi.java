@@ -145,7 +145,7 @@ public class RandomItemsApi
 			PlayerUtil.give(player, random.getItemStack());
 
 		else if(random.getCommand() != null && !random.getCommand().isEmpty())
-			Bukkit.dispatchCommand(Bukkit.getConsoleSender(), random.getCommand());
+			Bukkit.dispatchCommand(Bukkit.getConsoleSender(), random.getCommand().replace("{PLAYER}", player.getName()));
 	}
 
 	public static void spawn(Location location, RandomItem random)
