@@ -16,6 +16,13 @@ package com.github.hexocraft.random.items.command;
  *    limitations under the License.
  */
 
+import com.github.hexocraft.random.items.RandomItemsApi;
+import com.github.hexocraft.random.items.RandomItemsPlugin;
+import com.github.hexocraft.random.items.command.ArgType.ArgTypeRandomPool;
+import com.github.hexocraft.random.items.configuration.Messages;
+import com.github.hexocraft.random.items.configuration.Permissions;
+import com.github.hexocraft.random.items.radomitem.RandomItem;
+import com.github.hexocraft.random.items.radomitem.RandomPool;
 import com.github.hexocraftapi.chat.MessageBuilder;
 import com.github.hexocraftapi.chat.event.ClickEvent;
 import com.github.hexocraftapi.chat.event.HoverEvent;
@@ -37,15 +44,7 @@ import com.github.hexocraftapi.message.predifined.MessageColor;
 import com.github.hexocraftapi.message.predifined.line.Title;
 import com.github.hexocraftapi.message.predifined.message.*;
 import com.github.hexocraftapi.util.PlayerUtil;
-import com.github.hexocraft.random.items.RandomItemsApi;
-import com.github.hexocraft.random.items.RandomItemsPlugin;
-import com.github.hexocraft.random.items.command.ArgType.ArgTypeRandomPool;
-import com.github.hexocraft.random.items.configuration.Messages;
-import com.github.hexocraft.random.items.configuration.Permissions;
-import com.github.hexocraft.random.items.radomitem.RandomItem;
-import com.github.hexocraft.random.items.radomitem.RandomPool;
 import com.google.common.collect.Lists;
-import com.meowj.langutils.lang.LanguageHelper;
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -57,7 +56,6 @@ import org.bukkit.scheduler.BukkitRunnable;
 import java.util.Map;
 
 import static com.github.hexocraft.random.items.RandomItemsPlugin.config;
-import static com.github.hexocraft.random.items.RandomItemsPlugin.langUtils;
 
 /**
  * @author <b>hexosse</b> (<a href="https://github.comp/hexosse">hexosse on GitHub</a>))
@@ -505,16 +503,8 @@ public class RiCommands extends Command<RandomItemsPlugin>
 						{
 							// Item name / desc / ...
 							String itemName = "";
-							if(item.getItemStack() != null && item.getItemStack().getItemMeta() != null && item.getItemStack().getItemMeta().getDisplayName() != null)
-								itemName = item.getItemStack().getItemMeta().getDisplayName() + "(" + item.getItemStack().getAmount() + ")";
-							else if(item.getItemStack() != null)
-							{
-								if(langUtils.enabled())
-									itemName = LanguageHelper.getItemName(item.getItemStack(), plugin.config.locale);
-								else
-									itemName = "" + item.getItemStack().getData().getItemType();
-								itemName += " (" + item.getItemStack().getAmount() + ")";
-							}
+							if(item.getItemStack() != null)
+								itemName = item.getName() + " (" + item.getItemStack().getAmount() + ")";
 							else if(item.getCommand() != null)
 								itemName = "Command : " + item.getCommand();
 							if(itemName.isEmpty()==false)

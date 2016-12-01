@@ -18,9 +18,15 @@ package com.github.hexocraft.random.items.radomitem;
 
 import com.github.hexocraftapi.configuration.annotation.ConfigValue;
 import com.github.hexocraftapi.configuration.collection.ConfigurationObject;
+import com.meowj.langutils.lang.LanguageHelper;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.Map;
+
+import static com.github.hexocraft.random.items.RandomItemsPlugin.instance;
+import static com.github.hexocraft.random.items.RandomItemsPlugin.langUtils;
 
 /**
  * @author <b>hexosse</b> (<a href="https://github.comp/hexosse">hexosse on GitHub</a>))
@@ -64,7 +70,26 @@ public class RandomItem extends ConfigurationObject
 	public int getWeight() { return this.weight; }
 	public String getCommand() { return command; }
 
-	public void setName(String name) { this.name = name; }
+	public void setName(String name)
+	{
+		if(name == null && this.itemStack != null)
+		{
+			if(this.itemStack.getItemMeta() != null && this.itemStack.getItemMeta().getDisplayName() != null)
+				this.name = this.itemStack.getItemMeta().getDisplayName();
+			else
+				this.name = getNameWithEnchantments(this.itemStack);
+		}
+		else
+			this.name = name;
+	}
+
+	public String getName()
+	{
+		if(this.name == null && this.itemStack != null)
+			setName(null);
+
+		return this.name;
+	}
 
 	public void setRandomItem(RandomItem randomItem)
 	{
@@ -89,4 +114,21 @@ public class RandomItem extends ConfigurationObject
 		if(this.weight < 0)
 			this.weight = 0;
 	}
+
+	private String getNameWithEnchantments(ItemStack itemStack)
+	{
+		String name = langUtils.enabled() ? LanguageHelper.getItemName(itemStack, instance.config.locale) : "" + itemStack.getData().getItemType();
+
+		String enchantements = "";
+		for(Map.Entry<Enchantment, Integer> ench : itemStack.getEnchantments().entrySet())
+		{
+			if(!enchantements.isEmpty())  name += ", ";
+			enchantements += langUtils.enabled() ? LanguageHelper.getEnchantmentDisplayName(ench, instance.config.locale) : "" + ench.getKey() + (ench.getValue() > 0 ? "" + ench.getValue() : "");
+		}
+
+		if(!itemStack.getEnchantments().isEmpty()) name += " (" + enchantements + ")";
+
+		return name;
+	}
+
 }
