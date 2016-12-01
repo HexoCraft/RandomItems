@@ -83,7 +83,7 @@ public class Messages extends Configuration
 	/* Success */
 	@ConfigPath(path = "success", 		comment = "List of Messages used after a sucess command")
 	@ConfigValue(path = "success.add")			public String sAdd    = "Item sucessfuly added to {NAME}";
-	@ConfigValue(path = "success.add")			public String sAddc   = "Command sucessfuly added to {NAME}";
+	@ConfigValue(path = "success.addc")			public String sAddc   = "Command sucessfuly added to {NAME}";
 	@ConfigValue(path = "success.create")		public String sCreate = "List {NAME} created";
 	@ConfigValue(path = "success.delete")		public String sDelete = "List {NAME} has been removed";
 	@ConfigValue(path = "success.relaod")		public String sReload = "RandomItems has been reloaded";

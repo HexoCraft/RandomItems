@@ -23,7 +23,7 @@
     <groupId>com.github.hexocraft</groupId>
     <artifactId>random-items</artifactId>
     <name>RandomItems</name>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <packaging>jar</packaging>
     <description>.</description>
     <url>https://github.com/HexoCraft/${project.name}</url>
