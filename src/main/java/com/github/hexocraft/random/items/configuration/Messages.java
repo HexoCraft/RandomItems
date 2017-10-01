@@ -32,11 +32,11 @@ import java.util.List;
 "# RandomItems is a plugin and an API which make easy to drop or give to players a random item                          ",
 "# or even send a command from a pool of items depending on the weight associated to those items.                       ",
 "#                                                                                                                      ",
-"# ===------------------------------------------------------------------------------------------ © 2016 Hexosse ---=== #"
+"# ===------------------------------------------------------------------------------------------ © 2017 Hexosse ---=== #"
 })
 @ConfigFooter(comment = {
 " ",
-"# ===--- Enjoy -------------------------------------------------------------------------------- © 2016 Hexosse ---=== #"
+"# ===--- Enjoy -------------------------------------------------------------------------------- © 2017 Hexosse ---=== #"
 })
 public class Messages extends Configuration
 {
@@ -90,6 +90,7 @@ public class Messages extends Configuration
 
 	/* Errors */
 	@ConfigPath(path = "errors", 		comment = "List of Messages used after a error command")
+	@ConfigValue(path = "errors.AccesDenied")   public String AccesDenied = "You don't have permission to do that!";
 	@ConfigValue(path = "errors.add") 			public String eAdd = "Error while adding item to {NAME}";
 	@ConfigValue(path = "errors.add") 			public String eAddc = "Error while adding command to {NAME}";
 	@ConfigValue(path = "errors.create")	   	public String eCreate = "Error while creating list : {NAME}";

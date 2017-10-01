@@ -35,19 +35,19 @@ import org.bukkit.plugin.java.JavaPlugin;
 "# RandomItems is a plugin and an API which make easy to drop or give to players a random item                          ",
 "# or even send a command from a pool of items depending on the weight associated to those items.                       ",
 "#                                                                                                                      ",
-"# ===------------------------------------------------------------------------------------------ © 2016 Hexosse ---=== #"
+"# ===------------------------------------------------------------------------------------------ © 2017 Hexosse ---=== #"
 })
 @ConfigFooter(comment = {
 " ",
-"# ===--- Enjoy -------------------------------------------------------------------------------- © 2016 Hexosse ---=== #"
+"# ===--- Enjoy -------------------------------------------------------------------------------- © 2017 Hexosse ---=== #"
 })
 public class Config extends Configuration
 {
 	/* Plugin */
-	@ConfigPath(path = "plugin", comment = "Plugin options")
-	@ConfigValue(path = "plugin.useMetrics")              		public boolean useMetrics     = (boolean) true;
-	@ConfigValue(path = "plugin.useUpdater")              		public boolean useUpdater     = (boolean) true;
-	@ConfigValue(path = "plugin.downloadUpdate")          		public boolean downloadUpdate = (boolean) true;
+	@ConfigPath(path = "plugin")
+	@ConfigValue(path = "plugin.useMetrics", comment = "Enable metrics")        public boolean useMetrics = (boolean) true;
+	@ConfigValue(path = "plugin.useUpdater", comment = "Enable updater")        public boolean useUpdater = (boolean) true;
+	@ConfigValue(path = "plugin.downloadUpdate", comment = "Download update")   public boolean downloadUpdate = (boolean) true;
 
 	/* Localization */
 	@ConfigValue(path = "locale")								public String locale = "en_US";

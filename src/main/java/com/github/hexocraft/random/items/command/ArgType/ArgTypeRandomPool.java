@@ -16,11 +16,11 @@ package com.github.hexocraft.random.items.command.ArgType;
  *    limitations under the License.
  */
 
-import com.github.hexocraftapi.command.CommandInfo;
-import com.github.hexocraftapi.command.type.ArgType;
 import com.github.hexocraft.random.items.RandomItemsApi;
 import com.github.hexocraft.random.items.RandomItemsPlugin;
 import com.github.hexocraft.random.items.radomitem.RandomPool;
+import com.github.hexocraftapi.command.CommandInfo;
+import com.github.hexocraftapi.command.type.ArgType;
 import com.google.common.collect.ImmutableList;
 import org.bukkit.util.StringUtil;
 

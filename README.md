@@ -53,7 +53,7 @@ All commands have a full tab completion with a detailed help.
 #### API:
 As it is designed as an API, you can add RandomItems to your plugin using maven
 
-```
+```Maven
     <repositories>
         <repository>
            <id>hexosse-repo</id>
@@ -62,7 +62,7 @@ As it is designed as an API, you can add RandomItems to your plugin using maven
     </repositories>
 ```
 
-```
+```Maven
    <dependencies>
         <dependency>
             <groupId>com.github.hexocraft</groupId>
@@ -74,9 +74,3 @@ As it is designed as an API, you can add RandomItems to your plugin using maven
 ```
 
 The API can be found in RandomItemsApi class.
-<br>
-<br>
-
-
-#### Ressources:
-Releases : https://github.com/hexocraft/RandomItems/releases

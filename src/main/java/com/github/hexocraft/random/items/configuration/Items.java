@@ -16,12 +16,12 @@ package com.github.hexocraft.random.items.configuration;
  *    limitations under the License.
  */
 
+import com.github.hexocraft.random.items.radomitem.RandomPool;
 import com.github.hexocraftapi.configuration.Configuration;
 import com.github.hexocraftapi.configuration.annotation.ConfigFooter;
 import com.github.hexocraftapi.configuration.annotation.ConfigHeader;
 import com.github.hexocraftapi.configuration.annotation.ConfigValue;
 import com.github.hexocraftapi.configuration.collection.ConfigurationMap;
-import com.github.hexocraft.random.items.radomitem.RandomPool;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Collection;
@@ -36,11 +36,11 @@ import java.util.Collection;
 "# RandomItems is a plugin and an API which make easy to drop or give to players a random item                          ",
 "# or even send a command from a pool of items depending on the weight associated to those items.                       ",
 "#                                                                                                                      ",
-"# ===------------------------------------------------------------------------------------------ © 2016 Hexosse ---=== #"
+"# ===------------------------------------------------------------------------------------------ © 2017 Hexosse ---=== #"
 })
 @ConfigFooter(comment = {
 " ",
-"# ===--- Enjoy -------------------------------------------------------------------------------- © 2016 Hexosse ---=== #"
+"# ===--- Enjoy -------------------------------------------------------------------------------- © 2017 Hexosse ---=== #"
 })
 public class Items extends Configuration
 {

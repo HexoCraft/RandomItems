@@ -16,9 +16,9 @@ package com.github.hexocraft.random.items;
  *    limitations under the License.
  */
 
-import com.github.hexocraftapi.util.PlayerUtil;
 import com.github.hexocraft.random.items.radomitem.RandomItem;
 import com.github.hexocraft.random.items.radomitem.RandomPool;
+import com.github.hexocraftapi.util.PlayerUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;

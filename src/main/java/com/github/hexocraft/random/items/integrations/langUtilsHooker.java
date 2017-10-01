@@ -1,7 +1,7 @@
 package com.github.hexocraft.random.items.integrations;
 
 /*
- * Copyright 2015 hexosse
+ * Copyright 2017 hexosse
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -16,16 +16,22 @@ package com.github.hexocraft.random.items.integrations;
  *    limitations under the License.
  */
 
-import com.github.hexocraft.random.items.RandomItemsPlugin;
+import com.github.hexocraftapi.integration.Hooker;
 import com.meowj.langutils.LangUtils;
 
 /**
- * @author <b>hexosse</b> (<a href="https://github.comp/hexosse">hexosse on GitHub</a>))
+ * @author <b>Hexosse</b> (<a href="https://github.com/hexosse">on GitHub</a>))
  */
-public class LanguageUtils extends Integration<LangUtils>
+public class langUtilsHooker extends Hooker<LangUtils,langUtilsHooker>
 {
-	public LanguageUtils(RandomItemsPlugin plugin)
+	public langUtilsHooker() {
+		super();
+	}
+
+	// Capture the plugin if exist
+	public langUtilsHooker capture(LangUtils langUtilsPlugin)
 	{
-		super(plugin, "LangUtils");
+		this.plugin = langUtilsPlugin;
+		return this;
 	}
 }

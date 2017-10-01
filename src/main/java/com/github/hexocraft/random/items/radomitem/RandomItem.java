@@ -117,13 +117,15 @@ public class RandomItem extends ConfigurationObject
 
 	private String getNameWithEnchantments(ItemStack itemStack)
 	{
-		String name = langUtils.enabled() ? LanguageHelper.getItemName(itemStack, instance.config.locale) : "" + itemStack.getData().getItemType();
+		String name = langUtils != null ? LanguageHelper.getItemName(itemStack, instance.config.locale) : "" + itemStack.getData().getItemType();
 
 		String enchantements = "";
 		for(Map.Entry<Enchantment, Integer> ench : itemStack.getEnchantments().entrySet())
 		{
-			if(!enchantements.isEmpty())  name += ", ";
-			enchantements += langUtils.enabled() ? LanguageHelper.getEnchantmentDisplayName(ench, instance.config.locale) : "" + ench.getKey() + (ench.getValue() > 0 ? "" + ench.getValue() : "");
+			if(!enchantements.isEmpty())
+				name += ", ";
+
+			enchantements += langUtils != null ? LanguageHelper.getEnchantmentDisplayName(ench, instance.config.locale) : "" + ench.getKey() + (ench.getValue() > 0 ? "" + ench.getValue() : "");
 		}
 
 		if(!itemStack.getEnchantments().isEmpty()) name += " (" + enchantements + ")";

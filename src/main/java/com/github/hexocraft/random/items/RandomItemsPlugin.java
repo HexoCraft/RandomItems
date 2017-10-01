@@ -16,16 +16,17 @@ package com.github.hexocraft.random.items;
  *    limitations under the License.
  */
 
-import com.github.hexocraftapi.message.Line;
-import com.github.hexocraftapi.message.predifined.message.PluginMessage;
-import com.github.hexocraftapi.message.predifined.message.PluginTitleMessage;
-import com.github.hexocraftapi.plugin.Plugin;
-import com.github.hexocraftapi.updater.GitHubUpdater;
 import com.github.hexocraft.random.items.command.RiCommands;
 import com.github.hexocraft.random.items.configuration.Config;
 import com.github.hexocraft.random.items.configuration.Items;
 import com.github.hexocraft.random.items.configuration.Messages;
-import com.github.hexocraft.random.items.integrations.LanguageUtils;
+import com.github.hexocraft.random.items.integrations.langUtilsHooker;
+import com.github.hexocraftapi.integration.Hook;
+import com.github.hexocraftapi.message.Line;
+import com.github.hexocraftapi.message.predifined.message.PluginMessage;
+import com.github.hexocraftapi.message.predifined.message.PluginTitleMessage;
+import com.github.hexocraftapi.plugin.Plugin;
+import com.github.hexocraftapi.updater.BukkitUpdater;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
@@ -40,7 +41,8 @@ public class RandomItemsPlugin extends Plugin
 	public static Messages          messages = null;
 	public static Items             items    = null;
 
-	public static LanguageUtils 	langUtils = null;
+	/* Plugins */
+	public static langUtilsHooker 	langUtils = null;
 
 	@Override
 	public void onEnable()
@@ -57,20 +59,18 @@ public class RandomItemsPlugin extends Plugin
 		registerCommands(new RiCommands(this));
 
 		/* LangUtils */
-		langUtils = new LanguageUtils(this);
+		langUtils = (langUtilsHooker) new Hook(langUtilsHooker.class, "LangUtils", "com.meowj.langutils.LangUtils").get();
 
 		/* Enable message */
-		PluginTitleMessage titleMessage = new PluginTitleMessage(this, "ServerEvents is enable ...", ChatColor.YELLOW);
-		if(langUtils.enabled()) titleMessage.add("Integration with " + ChatColor.YELLOW + langUtils.getName());
+		PluginTitleMessage titleMessage = new PluginTitleMessage(this, "RandomItems is enable ...", ChatColor.YELLOW);
+		if(langUtils != null) titleMessage.add("Integration with " + ChatColor.YELLOW + langUtils.get().getName());
 		titleMessage.send(Bukkit.getConsoleSender());
 
-		/* Updater */
-		if(config.useUpdater)
-			runUpdater(getServer().getConsoleSender(), 20 * 10);
+        /* Updater */
+		runUpdater(getServer().getConsoleSender(), 20 * 10);
 
-		/* Metrics */
-		if(config.useMetrics)
-			runMetrics(20 * 2);
+        /* Metrics */
+		runMetrics(20 * 2);
 	}
 
 	@Override
@@ -84,11 +84,13 @@ public class RandomItemsPlugin extends Plugin
 
 	public void runUpdater(final CommandSender sender, int delay)
 	{
-		super.runUpdater(new GitHubUpdater(this, "HexoCraft/RandomItems"), sender, delay);
+		if(config.useUpdater)
+			super.runUpdater(new BukkitUpdater(this, "278925"), sender, config.downloadUpdate ,delay);
 	}
 
 	private void runMetrics(int delay)
 	{
-		super.RunMetrics(delay);
+		if(config.useMetrics)
+			super.RunMetrics(delay);
 	}
 }
